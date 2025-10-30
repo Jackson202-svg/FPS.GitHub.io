@@ -4,10 +4,51 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FPS Counter</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #111;
+      color: #0f0;
+      font-family: monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #fps-counter {
+      font-size: 3em;
+      border: 2px solid #0f0;
+      padding: 20px;
+      border-radius: 10px;
+    }
+  </style>
 </head>
 <body>
   <div id="fps-counter">FPS: <span id="fps">0</span></div>
-  <script src="fps.js"></script>
+
+  <script>
+    const fpsDisplay = document.getElementById("fps");
+    let lastFrameTime = performance.now();
+    let frameCount = 0;
+    let fps = 0;
+
+    function updateFPS() {
+      const now = performance.now();
+      frameCount++;
+      const delta = now - lastFrameTime;
+
+      if (delta >= 1000) {
+        fps = Math.round((frameCount * 1000) / delta);
+        fpsDisplay.textContent = fps;
+        frameCount = 0;
+        lastFrameTime = now;
+      }
+
+      requestAnimationFrame(updateFPS);
+    }
+
+    updateFPS();
+  </script>
 </body>
 </html>
