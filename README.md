@@ -3,7 +3,7 @@
 A simple FPS (Frames Per Second) counter built with HTML, CSS, and JavaScript.
 
 ## 🌐 Demo
-You can view it live at **[https://yourusername.github.io/fps-counter/](https://jackson202-svg.github.io/FPS.GitHub.io/)**  
+You can view it live at **(https://jackson202svg.github.io/FPS.GitHub.io/)**  
 (Replace `yourusername` with your GitHub username.)
 
 ## 📂 Files
